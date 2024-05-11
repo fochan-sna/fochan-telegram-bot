@@ -18,7 +18,10 @@ class FochanAPI:
                 for topic in self.http.get(FOCHAN_API_GET_TOPICS_URL).json()]
 
     def get_messages(self, limit: int = 3) -> list[Message]:
-        return [Message(**message)
+        return [Message(id=message['id'],
+                        topic_id=message['topic_id'],
+                        user=User(**message['user']),
+                        content=message['content'])
                 for message in self.http.get(FOCHAN_API_GET_MESSAGES_URL,
                                              params={'limit': limit}).json()]
 

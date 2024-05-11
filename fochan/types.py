@@ -3,26 +3,25 @@ from dataclasses import dataclass
 
 UserID = UUID
 TopicID = UUID
-MessageID = UUID
-
-
-@dataclass
-class Message:
-    id: MessageID
-    topic_id: TopicID
-    user_id: UserID
-    content: str
-    sent_at: int
-
-
-@dataclass
-class Topic:
-    id: UUID
-    name: str
-    description: str
+MessageID = int
 
 
 @dataclass
 class User:
     id: UserID
     username: str
+
+
+@dataclass
+class Topic:
+    id: TopicID
+    name: str
+    description: str
+
+
+@dataclass
+class Message:
+    id: MessageID
+    topic_id: TopicID
+    user: User
+    content: str

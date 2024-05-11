@@ -34,7 +34,8 @@ def process_messages():
                     continue
 
                 if users[user]['last_message_got'] < message.id:
-                    bot.send_message(user, message.content)
+                    bot.send_message(user, f'{hbold(message.user.username)}\n'
+                                           f'{message.content}')
                     users[user]['last_message_got'] = message.id
         sleep(1)
 
