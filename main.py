@@ -71,7 +71,7 @@ async def enter_topic(message: Message) -> None:
     if users[message.chat.id]['current_topic']:
         await message.answer(
             f'You have entered to '
-            f'{hbold(users[message.chat.id]['current_topic'].name)} topic'
+            f'{hbold(users[message.chat.id]["current_topic"].name)} topic'
         )
         return
 
