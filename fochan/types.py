@@ -8,20 +8,20 @@ MessageID = int
 
 @dataclass
 class User:
-    id: UserID
+    user_id: UserID
     username: str
 
 
 @dataclass
 class Topic:
-    id: TopicID
+    topic_id: TopicID
     name: str
     description: str
 
 
 @dataclass
 class Message:
-    id: MessageID
+    message_id: MessageID
     topic_id: TopicID
     user: User
     content: str

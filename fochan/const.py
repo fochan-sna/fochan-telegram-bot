@@ -1,6 +1,6 @@
-FOCHAN_BASE_URL = 'https://localhost:8000'
+FOCHAN_BASE_URL = 'http://stress-testers.ru:5614/'
 
 FOCHAN_API_CREATE_USER_URL = FOCHAN_BASE_URL + '/get_user_id'
-FOCHAN_API_GET_TOPICS_URL = FOCHAN_BASE_URL + '/topics'
+FOCHAN_API_GET_TOPICS_URL = FOCHAN_BASE_URL + '/get_topics'
 FOCHAN_API_GET_MESSAGES_URL = FOCHAN_BASE_URL + '/get_messages'
 FOCHAN_API_SEND_MESSAGE_URL = FOCHAN_BASE_URL + '/write_message'
