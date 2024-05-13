@@ -1,6 +1,7 @@
 import sys
 import asyncio
 import logging
+from time import time
 from os import getenv
 from dotenv import load_dotenv
 
@@ -38,12 +39,12 @@ async def process_messages():
                 users[user]['last_message_got'] = message.message_id
 
 
-async def register_user(tg_user_id: Message.chat.id):
+async def register_user(tg_user_id: int):
     if tg_user_id not in users:
         users[tg_user_id] = {
             'user': fochan.create_user(),
             'current_topic': None,
-            'last_message_got': -1
+            'last_message_got': fochan.get_messages(1)[0].message_id
         }
 
 

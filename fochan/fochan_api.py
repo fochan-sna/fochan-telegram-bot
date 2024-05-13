@@ -1,4 +1,5 @@
 from requests import Session
+from datetime import datetime
 
 from .types import *
 from .const import *
@@ -21,7 +22,8 @@ class FochanAPI:
         return [Message(message_id=message['message_id'],
                         topic_id=message['topic_id'],
                         user=User(**message['user']),
-                        content=message['content'])
+                        content=message['content'],
+                        sent_at=datetime.strptime(message['sent_at'], "%Y-%m-%dT%H:%M:%S.%f").timestamp())
                 for message in self.http.get(FOCHAN_API_GET_MESSAGES_URL,
                                              params={'limit': limit}).json()['messages']]
 

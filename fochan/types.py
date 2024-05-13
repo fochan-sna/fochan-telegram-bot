@@ -25,3 +25,4 @@ class Message:
     topic_id: TopicID
     user: User
     content: str
+    sent_at: float
